@@ -1,16 +1,19 @@
 #include <iostream> 
+#include <vector>
 
-int sortNums[10], total = 0;
-bool finished = false;
-char answer;
+std::vector<int> sortNums;
 
 int getInput()
 {
+	bool finished = false;
+	char answer;
+	int input; 
+
 	while (!finished)
 	{
 		std::cout << "Enter number: ";
-		std::cin >> sortNums[total];
-		total++;
+		std::cin >> input; 
+		sortNums.push_back(input);
 		std::cout << "Final number? (y/n): ";
 		std::cin >> answer;
 		if (answer == 'y')
@@ -19,19 +22,17 @@ int getInput()
 	return 1;
 }
 
-int bubbleSort(int numbers[])
+int bubbleSort(std::vector<int> &numbers)
 {
 	int temp;
 
-	for (int i = 1; (i <= total) ; i++)
+	for (int i = 1; (i <= sortNums.size()); i++)
 	{
-		for (int j = 0; j < (total - 1); j++)
+		for (int j = 0; j < (sortNums.size() - 1); j++)
 		{
 			if (numbers[j + 1] < numbers[j])      
 			{
-				temp = numbers[j];             
-				numbers[j] = numbers[j + 1];
-				numbers[j + 1] = temp;              
+				std::swap(sortNums[j], sortNums[j+1]);            
 			}
 		}
 	}
@@ -43,9 +44,14 @@ int main()
 	getInput();
 	bubbleSort(sortNums);
 
-	for (int i = 0; i < total; i++)
+	for (int i = 0; i < sortNums.size(); i++)
 	{
-		std::cout << sortNums[i] << ", ";
+		if (sortNums[i] == sortNums.back())
+		{ 
+			std::cout << sortNums[i] << ".";
+		}
+		else 
+			std::cout << sortNums[i] << ", ";
 	}
 
 	system("PAUSE");
