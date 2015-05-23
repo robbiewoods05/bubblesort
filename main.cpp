@@ -30,9 +30,7 @@ void bubbleSort(std::vector<int> &numbers)
 		for (int j = 0; j < (sortNums.size() - 1); j++)
 		{
 			if (numbers[j + 1] < numbers[j])      
-			{
 				std::swap(sortNums[j], sortNums[j+1]);            
-			}
 		}
 	}
 }
@@ -45,9 +43,7 @@ int main()
 	for (int i = 0; i < sortNums.size(); i++)
 	{
 		if (sortNums[i] == sortNums.back())
-		{ 
 			std::cout << sortNums[i] << ".";
-		}
 		else 
 			std::cout << sortNums[i] << ", ";
 	}
