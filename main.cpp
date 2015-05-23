@@ -3,7 +3,7 @@
 
 std::vector<int> sortNums;
 
-int getInput()
+void getInput()
 {
 	bool finished = false;
 	char answer;
@@ -19,10 +19,9 @@ int getInput()
 		if (answer == 'y')
 			finished = true;
 	}
-	return 1;
 }
 
-int bubbleSort(std::vector<int> &numbers)
+void bubbleSort(std::vector<int> &numbers)
 {
 	int temp;
 
@@ -36,7 +35,6 @@ int bubbleSort(std::vector<int> &numbers)
 			}
 		}
 	}
-	return 1;
 }
 
 int main()
