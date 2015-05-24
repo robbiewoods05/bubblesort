@@ -1,6 +1,5 @@
 sortNums = []
 
-
 def getInput():
 	finished = False
 	yourNum = 0
