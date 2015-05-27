@@ -23,8 +23,6 @@ void getInput()
 
 void bubbleSort(std::vector<int> &numbers)
 {
-	int temp;
-
 	for (int i = 1; (i <= sortNums.size()); i++)
 	{
 		for (int j = 0; j < (sortNums.size() - 1); j++)
